@@ -1,0 +1,69 @@
+/* width:960px 莉･荳九�險ｭ螳� */
+@media screen and (max-width:960px) {
+    html, body {
+      font-size: 0.95rem;/* 譁�ｭ励�螟ｧ縺阪＆(蜈ｨ菴�) */
+    }
+  
+    /* background img */
+    header {
+      background-position: 30% 50%;/* bg-image 縺ｮ荳ｭ蠢�せ繧偵★繧峨☆ */
+    }
+    #header_upper_headline {
+      font-size: 2.5rem;
+    }
+    #header_upper_phrase {
+      width: 20rem;
+    }
+  
+    /* 縲後％縺ｮ繧医≧縺ｪ譁ｹ縺ｯ縺皮嶌隲�￥縺�縺輔＞縲拘ection */
+    #support_targets_bordered_box_wrap {
+  
+    }
+    #support_targets_headline {
+    }
+    /* 鬘斐�繧､繝ｩ繧ｹ繝� */
+    #support_targets_face_image {
+      width: 5rem;
+      height: auto;
+    }
+  
+    /* Grid Layout 縺ｮ隗｣髯､ */
+    #responsive_wrap_of_main {
+      display: block;/* grid 繧偵ｄ繧√ｋ */
+    }
+    /* GridLayout隗｣髯､縺ｫ莨ｴ縺� main_section 縺ｮ荳贋ｸ九�繝ｼ繧ｸ繝ｳ繧定ｪｿ謨ｴ, */
+    .main_section{
+      width: 450px;
+      margin: 1.8rem auto;
+    }
+    .main_section:first-child {
+      margin-top: 0rem;
+    }
+    .main_section:last-child {
+      margin-bottom: 0rem;
+    }
+  
+    .centralizable {
+      text-align: center;
+    }
+  
+    /* Contact Us Section */
+    #contact_us_by_form_button>a {
+      font-size: 1.2rem;
+    }
+    #contact_us_by_phone_flex_box {
+      display: block;
+    }
+    #contact_us_img_phone {
+      width: 1.4rem;
+    }
+    #contact_us_phone_title {
+      font-size: 1.2rem;
+    }
+    /* usage flowchart section */
+    .node_box {
+      height: 3.2rem;
+    }
+    /* Footer */
+  }
+  
