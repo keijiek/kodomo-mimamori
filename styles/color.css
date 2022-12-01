@@ -1,0 +1,125 @@
+/* 
+  色の変数
+*/
+ :root {
+  /* <body> background color */
+  --body-bg-clr:  #eee;
+
+  /* <main>: font color and background color*/
+  --main-bg-clr:  #fff;
+  --main-clr:     black;
+
+  /* <h1> of <header>: font */
+  --headline-crl: #f79646;
+
+  /* <header>and<footer>: font and background */
+  --secondary-bg-clr: #1f497d;
+  --secondary-clr:    #fff;
+
+  --border-color:   var(--secondary-bg-clr);
+
+
+  /* <a> colors on <header> or <footer> */
+  --a-lnk-sub-color:    var(--secondary-clr);
+  --a-vstd-sub-color:   var(--a-lnk-sub-color);
+  --a-hvr-sub-color:  #ffffff;
+  --a-actv-sub-color: #ffffff;
+}
+
+/* 背景色 */
+body {
+  background-color: #eee;
+}
+.main {
+  background-color: #eee;
+  color: #111;
+}
+.footer {
+  background-color: #1f497d;
+  color: #eee;
+}
+.header {
+  background-color: #1f497d;
+  color: #fff;  
+}
+.header-head-part__head {
+  color: #f79646;
+}
+
+/* ナヴィゲーションの背景色とボーダー色 */
+.navigation-list__item {
+  background-color: #1f497d;
+  border-color: #fff;
+  opacity: 0.9;
+}
+.navigation-list__item:hover {
+  opacity: 0.7;
+}
+/* ナヴィゲーションのアンカー色 */
+.navigation-list__anchor:link,
+.navigation-list__anchor:visited {
+  color: #fff;  
+}
+/* hover と actiove は無し */
+.navigation-list__anchor:hover, .navigation-list__anchor:active {
+}
+
+/*
+  <a> colors of <main>,
+  Do Not change the order of following settings.
+*/
+a:link,
+a:visited {
+  color: #0000cc;
+}
+a:hover,
+a:active {
+  color: #3366ff;
+}
+
+/* 
+  具体的な支援内容 背景
+*/
+.specific-support__inner-box {
+  /* background-color: #ccc; */
+  border-color: #111;
+}
+
+/*
+  このような方はご相談ください の色
+*/
+.support-targets__bordered_box {
+  border-color: #1f497d;
+}
+
+/*
+  ご相談はこちらから, フォームへ飛ぶボタン
+*/
+.contact-us__button:link,
+.contact-us__button:visited {
+  background-color : #00c;
+  color: #fff;
+}
+.contact-us__button:hover,
+.contact-us__button:active {
+  background-color: #66c;
+  
+}
+
+.drop-shadow-common {
+  box-shadow: 0.3rem 0.3rem 0.1rem #333;
+}
+
+/*
+  ご利用の流れ フローチャート
+*/
+
+/* 
+  footer 色
+*/
+footer a:link,
+footer a:visited,
+footer a:hover,
+footer a:active {
+  color:#eee;
+}

@@ -1,0 +1,66 @@
+@media screen and (max-width:768px) {
+  html {
+    font-size: 15px;
+  }
+
+  /* 回り込み解除 */
+  .main-flex {
+    display: block;
+  }
+  .main-flex__left-container,
+  .main-flex__right-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* h1 の縮小 */
+  .header-head-part__head {
+    font-size:2.4rem;
+  }
+  .header-head-part__description {
+    font-size:1rem;
+    width: 22rem;
+  }
+
+  /* h2 の縮小 */
+  .support-targets__head {
+    font-size: 1.3rem;
+  }
+
+  /* こんな方はご相談ください */
+  /* ボーダー内パディング */
+  .support-targets__flex-wrap {
+    padding: 0.4rem 0.8rem;
+  }
+  /* 顔ラップ、右マージン縮小 */
+  .support-targets__face-img-wrap {
+    
+  }
+  /* 顔縮小 */
+  .support-targets__face-img {
+    width: 6rem;
+    height: auto;
+  }
+
+
+  /* 申し込みフォームボタンの縮小 */
+  .contact-us__button:link,
+  .contact-us__button:visited {
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+  }
+  /* 電話番号部分の改行 */
+  .contact-by-phone__flex-wrap {
+    display: block;
+  }
+  .contact-by-phone__phone-number {
+    text-align: center;
+  }
+  /* 電話タイトル縮小 */
+  .contact-by-phone__img {
+    width: 1.4rem;
+  }
+  .contact-by-phone__title {
+    font-size: 1.4rem;
+  }
+}

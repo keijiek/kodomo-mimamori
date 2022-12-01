@@ -1,179 +1,28 @@
 @charset "UTF-8";
 
-/*
-  リセット
-  */
-html, head, body,
-header, footer, main,
-article, section,
-h1, h2, h3, h4, h5, h6,
-div, p, address,
-dl, dt, dd,
-ol, ul, li
-{
-  margin  : 0rem ;
-  padding : 0rem ;
+/* 
+  box-sizing: border-box
+*/
+/* *,
+*::before,
+*::after {
   box-sizing: border-box;
-}
-
-ol, ul {
-  padding-left: 1.6rem;
-}
-
+} */
 
 /* 
-  色の変数
- */
- :root {
-  /* <body> background color */
-  --body-bg-clr:  #eee;
-
-  /* <main>: font color and background color*/
-  --main-bg-clr:  #fff;
-  --main-clr:     black;
-  --sub-clr:      gray;
-
-  /* <h1> of <header>: font */
-  --headline-crl: #f79646;
-
-  /* <header>and<footer>: font and background */
-  --secondary-bg-clr: #1f497d;
-  --secondary-clr:    #fff;
-
-  --border-color:   var(--secondary-bg-clr);
-
-  /* <a> colors on <main> */
-  --a-lnk-main-color: #0000cc;
-  --a-vstd-main-color: var(--a-lnk-main-color);
-  --a-hvr-main-color: #3366ff;
-  --a-actv-main-color:#3366ff;
-
-  /* <a> colors on <header> or <footer> */
-  --a-lnk-sub-color:    var(--secondary-clr);
-  --a-vstd-sub-color:   var(--a-lnk-sub-color);
-  --a-hvr-sub-color:  #ffffff;
-  --a-actv-sub-color: #ffffff;
-}
-
-/* 
-  全体(header, main, footer)の配色
-  footer の背景色を下端まで塗りたいので、body で header と footer の色を指定し、main で本編の色を指定している。
- */
+  font-family 2022's best(ICS MEDIA)
+*/
 body {
-  background-color: var(--body-bg-clr);
-}
-
-main {
-  background-color: var(--main-bg-clr);
-  color: var(--main-clr);
-}
-
-footer {
-  background-color: var(--secondary-bg-clr);
-  color: var(--secondary-clr);
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 
 
-/*
-  headr footer の色設定
-  */
-header {
-  color: white;
-  background-color: var(--secondary-bg-clr);
-  background-image: url(../images/head.jpg);
-  background-position: 50% 50% ;
-  background-repeat: repeat;
-}
-h1 {
-  color: var(--headline-crl);
-}
-#header_lower_headline {
-  color: var(--secondary-clr);
-}
 
-/*
-  <a> colors of <main>,
-  Do Not change the order of following settings.
- */
-a:link {
-  color: var(--a-lnk-main-color);
-}
-a:visited {
-  color: var(--a-vstd-main-color);
-}
-a:hover {
-  color: var(--a-hvr-main-color);
-}
-a:active {
-  color: var(--a-actv-main-color);
-}
-
-a.button {
-  background-color: var(--a-lnk-main-color);
-  color: white;
-  border-radius: 0.4rem;
-  padding: 0.8rem 1rem;
-  text-decoration:none;
-  text-align: center;
-  box-shadow: 0.3rem 0.3rem 0.1rem #333;
-}
-a.button:hover {
-  background-color: var(--a-hvr-main-color);
-}
-a.button:active {
-  box-shadow: 0.1rem 0.1rem 0rem #333;
-  position: relative;
-  right: -0.2rem;
-  bottom: -0.2rem;
-}
-
-/*
-  <a> colors of <header> or <footer>,
-  Do Not change the order of following settings.
- */
-header a:link,
-footer a:link {
-  color: var(--a-lnk-sub-color);
-}
-header a:visited,
-footer a:visited {
-  color: var(--a-vstd-sub-color);
-}
-header a:hover,
-footer a:hover {
-  color: var(--a-hvr-sub-color);
-}
-header a:active,
-footer a:active {
-  color: var(--a-actv-sub-color);
-}
-
-/* border の色 */
-.bordered_box {
-  border-color: var(--border-color);
-}
-
-/* 改行させないclass, 改行させないelements */
-.nowrap, dt, h1, h2, h3, h4, h5, h6 {
-  white-space: nowrap;
-  /* display: inline; */
-}
-
-/* ブロックの中央寄せ */
-.centralized_block {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 不透明度100% */
-.max_opacity {
-  opacity: 1;
-}
-
-/* affter にコロンを付加 */
-.after_colon::after {
-  content: ":";
-}
 /*
   text-decoration 系
 */
@@ -194,30 +43,4 @@ footer a:active {
 .align_item_start {
   align-items: start;
 }
-/* ボックスを内容物にフィット */
-.fit_content {
-  width: fit-content;
-  max-width: fit-content;
-}
 
-/* シャドウで縁取り */
-.font-border {
-  text-shadow:  
-                -1px -1px 0px #000,
-                -1px  0px 0px #000,
-                -1px  1px 0px #000,
-                 0px -1px 0px #000,
-                 0px  1px 0px #000,
-                 1px -1px 0px #000,
-                 1px  0px 0px #000,
-                 1px  1px 0px #000
-                /* 2px 2px 0px #000; */
-}
-
-.drop_shadow {
-  text-shadow: 2px 2px 0px #000;
-}
-
-.blackening {
-  color: black;
-}

@@ -1,0 +1,14 @@
+@media screen and (max-width:360px) {
+  .navigation-list {
+    margin:0.6rem 0 0 0;
+    font-size: 0.9rem;
+  }
+  .support-targets__face-img {
+    display: none;
+    width: 0rem;
+    height: auto;
+  }
+  .support-targets__bordered_box {
+    padding: 0.4rem 0.8rem;
+  }
+}

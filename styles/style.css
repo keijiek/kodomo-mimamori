@@ -1,295 +1,349 @@
 @charset "UTF-8";
 /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap'); */
 
+/* 根本文字サイズ */
+html {
+  font-size: 17px;
+}
+
+
 /*
-  font-family
-  font は html>link で読み込んでいる。
- */
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 110%;
+  全体のレイアウト編 ================================================
+*/
+/* 【重要】横幅の変数 */
+:root {
+  --content-width: 960px;
+  --content-padding: 20px;
+}
+/*
+  大枠(body, header, main, footer)を横幅100%。
+  内側にコンテナを入れ、それで実際の横幅を決める。
+*/
+body, .header, .main, .footer {
   width: 100%;
-  min-width: 320px;
 }
-
-header, footer, main {
-  padding: 1.6rem 1.6rem;
+/*
+  header, main, footer の直下のコンテナ。
+  実際の横幅決定とセンタリングと余白(padding)が役目 
+*/
+.header-container,
+.main-container,
+.footer-container {
   width: 100%;
-  max-width: 1260px;
-  min-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-footer {
-  padding-top: 1rem;
-}
-header, main, footer {
-  min-width: 320px;
-}
-/* 最低横幅300px */
-section {
-  min-width: 300px;
+  max-width: calc(var(--content-width) + var(--content-padding) * 2);
+  margin: 0 auto;
+  padding: 1.6rem;
 }
 
-/*
-  Grid レイアウト(w:960px以上)
-*/
-#responsive_wrap_of_main {
-  display:grid;
-  align-items: start;
-  justify-items: start;
-  grid-template-columns: 1fr auto;/* grid の最後のcellの幅をautoにすれば、余分な空白を作らずに済む */
-  grid-template-rows: 1fr auto;
-  gap: 1.6rem;
-  height: fit-content;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-/*
-  ※兄弟が存在する要素のスタイルを調整するなら、セレクタはidよりclassの方が良さそう。
-  id指定は優先度が高いので、兄弟をまとめて調整する時に個別指定を迫られる。
-*/
-.main_section {
-  width: 600px;
-}
-.little_width_section {
-  width: 300px;
-}
-#support_targets_section {
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-#contact_us_section {
-  grid-column: 1/2;
-  grid-row: 2/3;
-}
-#usage_flow_section {
-  grid-column: 2/3;
-  grid-row: 1/3;
-}
 
 /*
-  <header> のスタイル
+  header 編 ========================
 */
-/* header upper */
-#header_upper {
-  min-width: fit-content;
+.header {
+  background-image: url(../images/head.jpg);
+  background-position: 50% 50% ;
+  /* background-repeat: repeat; */
 }
-#header_upper_project_name {
-  font-size: 0.9rem;
+/* タイトル部分はセンタリング＆シャドウ */
+.header-head-part {
   text-align: center;
+  text-shadow: 2px 2px 2px #000;
 }
-#header_upper_headline {
+/* 宮崎市支援対象児童等見守り強化事業の表示 */
+.header-head-part__pre-head {
+  font-size: 1rem;
+}
+/* h1, 文字サイズ, 上下マージン減少 */
+.header-head-part__head {
   font-size: 3rem;
-  text-align: center;
+  margin: 0.4rem 0;
 }
-#header_upper_phrase {
+/* h1下部の解説文 */
+.header-head-part__description {
   text-align: left;
-  /* min-width: fit-content; */
+  font-size: 1.1rem;
   width: 26rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
-/* header_lower */
-#header_lower {
-  background-color: rgba(102,102,102,0.3);
-  border-radius: 0.4rem;
-  padding: 0.4rem 0.6rem;
-  width: 35%;
-  min-width: fit-content
-}
-#header_lower_headline {
-  text-align: left;
-}
-#header_lower_list {
-  list-style-position: inside;
-  text-align: left;
-  padding: 0.4rem;
-  padding-left: 0.8rem;
-}
-/* header section の共通設定 */
-.header_section {
-  margin-top: 0.6rem;
-  width: fit-content;
-}
-.header_section:first-child {
-  margin-top: 0rem;
-}
-
 
 /* 
-  「このような方はご相談ください」section
+  navigator 編 ========================
 */
-#support_targets_section {
+/* nav のリストの上下マージンを調整 */
+.navigation-list {
+  margin:0.6rem 0 0 0;
+  font-size: 1rem;
 }
-#support_targets_bordered_box {
+.navigation-list__item {
+  width: 7rem;
+  text-align: center;
+}
+/* nav のリストを flex-box 化*/
+.navigation-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-items: center; */
+  /* justify-content: center; */
+  align-items: stretch;
+}
+/* nav アイテムの flex 設定 */
+.navigation-list__item {
+  align-self: stretch;
+}
+.navigation-list__item {
+  padding: 0.4rem 1rem;
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+.navigation-list__item:first-child {
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+.navigation-list__item {
+  font-weight: 700%;
+}
+.navigation-list__anchor {
+  height:100%;
+}
+/* 
+  Main 編
+*/
+/* main の共通設定 */
+.main-section {
+  margin-top:1.4rem;
+  margin-bottom:1.4rem;
+}
+.main-section:first-child {
+  margin-top:0;
+}
+.main-section:last-child {
+  margin-bottom: 0;
+}
+.main-inner-box {
+  /* width: 60%; */
+  margin:0 auto;
+}
+
+/* 961px以上でのまわりこみ */
+.main-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  align-content: left;
+}
+.main-flex__left-container {
+  width: 70%;
+  align-self: left;
+}
+.main-flex__right-container {
+  width: 30%;
+  align-self: left;
+}
+
+/* 
+  main > activity-list 編
+*/
+.specific-support {
+  /* width: 100%; */
+}
+.specific-support__inner-box {
+  padding: 0.4rem 1.2rem;
+  /* width: 50%; */
+  /* margin:0 auto; */
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.6rem ;
+  -webkit-border-radius: 0.6rem ;
+  -moz-border-radius: 0.6rem ;
+  -ms-border-radius: 0.6rem ;
+  -o-border-radius: 0.6rem ;
+}
+/* h2 左寄せ, 上下幅調整 */
+.specific-support__head {
+  text-align: left;
+  margin: 0.4rem 0 0 0;
+}
+/* 支援内容 ol */
+.specific-support__list {
+  list-style-position: inside;
+  text-align: left;
+  padding-left: 1rem;
+  margin-top: 0.4rem;
+}
+
+/*
+  main support-targets 編
+*/
+/* inner */
+.support-targets__inner-box {
+  /* margin: 0 auto; */
+  /* width: 50%; */
+}
+/* こんな方は…のボーダー枠 */
+.support-targets__bordered_box {
   border-style: solid;
   border-top-left-radius: 1.4rem;
   border-bottom-right-radius: 1.4rem;
   padding: 0;
 }
-#support_targets_bordered_box_wrap {
+/* ボーダーの内容 flex */
+.support-targets__flex-wrap {
   width: 100%;
+  padding: 1rem 1.4rem;
   display: flex;
-  align-items: center;
-  padding: 0.4rem 2rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* justify-content: flex-start; */
+  justify-items: flex-start;
+  align-items: stretch;
 }
-#support_targets_face_image {/* 顔イラスト */
-  /* w125px × h157 */
+.support-targets__head {
+  margin: 0;
+}
+.support-targets__list {
+  margin: 0;
+  margin-top: 0.6rem;
+}
+/* 顔イラスト */
+.support-targets__face-img-wrap {
+  margin-right: 1rem;
+}
+.support-targets__face-img {
   width: 7rem;
   height: auto;
 }
-#support_targets_description {
+/* 解説部分 */
+.support-targets__description {
   padding-top: 0.4rem;
   padding-bottom: 0rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
-.description_block {
+
+
+/*
+  ご相談はこちらから contact us 編
+*/
+/* h2 */
+.contact-us__head {
+  text-align: center;
+}
+.contact-us__by-form {
+  margin-top: 0.4rem;
+  margin-bottom: 1.4rem;
+}
+.contact-us__button-wrap {
+  margin-bottom:1rem;
+  padding: 0;
+}
+/*
+  a ボタン 設定
+*/
+/*　a ボタン平時 */
+.contact-us__button:link,
+.contact-us__button:visited {
+  display: block;
+  font-size: 1.4rem;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration:none;
+  padding: 0.8rem 1rem;
+  box-shadow: 0.3rem 0.3rem 0.1rem #333;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+}
+/* a ボタンを押し込む演出 */
+.contact-us__button:active {
+  position: relative;
+  right: -0.2rem;   
+  bottom: -0.2rem;
+  box-shadow: 0.1rem 0.1rem 0rem #333;
+}
+
+.contact-us__description,
+.contact-by-phone{
+  margin-bottom: 0.8rem;
   padding-right: 1rem;
   padding-left: 1rem;
 }
 
 /*
-  Contact Us Section
+  電話での相談申し込み
 */
-/* Contatc Us 共通 */
-#contact_us_headline {
-  text-align: center;
-}
-#contact_us_description,
-#contact_us_phone_wrap {
-  margin-bottom: 0.8rem;
-}
-
-/* Contact_us_by_Form */
-#contact_us_by_form {
-  margin-top: 0.4rem;
-  margin-bottom: 1.4rem;
-}
-#contact_us_img_qrcode {
-  width: 4rem;
-  height: auto;
-  margin-right: 0.6rem;
-}
-
-#contact_us_by_form_button {
-  margin-bottom:1rem;
-  padding: 0;
-}
-#contact_us_by_form_button>a {
-  display: block;
-  font-size: 1.4rem;
-  width: fit-content;
-  margin-top: 0.4rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#contact_us_form_description {
-}
-
-/* Contact_us_by_Phone */
-#contact_us_by_phone {
+.contact-by-phone {
   margin-top:1.4rem;
   margin-bottom:0rem;
 }
-#contact_us_by_phone_flex_box {
+.contact-by-phone__flex-wrap {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
+  align-items: stretch;
+  /* justify-content: flex-start; */
+  justify-items:flex-start;
   width: fit-content;
-  margin: 0.4rem auto;
+  margin: 0 auto;
   font-size: 1.4rem;
 }
-#contact_us_img_phone {
+.contact-by-phone__title {
+  font-weight: bold;
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+.contact-by-phone__img {
   width: 1.6rem;
   height: auto;
   vertical-align: middle;
   margin-right: 0.4rem;
 }
-#contact_us_phone_title {
-  font-weight: bold;
-  font-size: 1.4rem;
-  vertical-align: middle;
-}
-#contact_us_phone_title::after {
+.contact-by-phone__title::after {
   content: '(担当:市園):';
   font-weight: normal;
-  margin-right: 0.6rem;
 }
-#contact_us_phone_number {
+.contact-by-phone__phone-number {
+  margin-left: 0.2rem;
   font-size: 1.6rem;
-  text-align: center;
   vertical-align: middle;
+  white-space: nowrap;
 }
-
 
 
 /*
   Footer Styles
 */
-footer {
-  text-align: center;
+/* やや大きいpaddingを小さく */
+.footer-container {
+  padding: 0.6rem 0;
 }
-#footer_wrap {
-  text-align: center;
 
+.footer-inner-container {
+  /* margin: 0 auto;
+  width: 600px; */
 }
-#footer_organization {
-  display: flex;
-  margin-bottom: 0.6rem;
-  width: fit-content;
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
+
+/* address table  */
+.implement-organization {
+  font-size: 1rem;
 }
-#footer_organization>dt {
-  width: 7rem;
+.implement-organization__name {
+  padding-left: 1rem;
 }
-#footer_org_title::before {
-  content: '●';
+.address-table__head::after {
+  content:':'
 }
-#footer_org_title::after {
-  content: ':';
+.address-table__data {
+  padding-left: 1rem;
 }
-#footer_organization>dd {
-  text-decoration: none;
-}
-#footer_addresses {
+
+/* address */
+.address {
   font-size: 0.9rem;
-  margin-left: 1rem;
   width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-#address_data_list {
-  display: grid;
-  width: 70%;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns:1fr 1fr;
-  gap: 0.2rem
-}
-#address_data_list>div {
-  width: 15rem;
-}
-#address_data_list dt {
-  width: 2.5rem;
-}
-#address_data_list dt::after {
-  content: ':';
-}
-.address_street {
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-.address_phonenumber {
-  grid-column: 2/3;
-  grid-row: 1/2;
-}
-.address_phonenumber {
-  grid-column: 1/2;
-  grid-row: 2/3;
-}
-.address_url {
-  grid-column: 2/3;
-  grid-row: 2/3;
+  /* max-width: 70%; */
+  margin: 0 auto;
 }

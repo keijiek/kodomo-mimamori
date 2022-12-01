@@ -1,128 +1,81 @@
-/* wdith:520px 莉･荳九�險ｭ螳� */
 @media screen and (max-width:520px) {
-    html, body {
-      font-size: 0.9rem;
-    }
-  
-    /* <header> */
-    header {
-      background-position: 40% 50%;/* bg-image 縺ｮ荳ｭ蠢�せ繧偵★繧峨☆ */
-    }
-    #header_upper_project_name {
-      font-size: 0.8rem;
-    }
-    #header_upper_headline {
-      font-size: 2rem;
-    }
-    #header_upper_phrase {
-      width: 18rem;
-    }
-  
-    main {
-      padding:1.2rem 0.8rem;
-    }
-    
-    /* Grid Layout 縺ｮ隗｣髯､ */
-    #responsive_wrap_of_main {
-      display: block;/* grid 繧偵ｄ繧√ｋ */
-    }
-    /* GridLayout隗｣髯､縺ｫ莨ｴ縺� main_section 縺ｮ荳贋ｸ九�繝ｼ繧ｸ繝ｳ繧定ｪｿ謨ｴ, */
-    .main_section{
-      max-width: 350px;
-      min-width: 300px;
-      margin: 1.4rem auto;
-    }
-    .main_section:first-child {
-      margin-top: 0rem;
-    }
-    .main_section:last-child {
-      margin-bottom: 0rem;
-    }
-  
-  
-    /* 縲後％縺ｮ繧医≧縺ｪ譁ｹ縺ｯ縺皮嶌隲�￥縺�縺輔＞縲拘ection*/
-    #support_targets_bordered_box_wrap {
-      padding: 0.4rem 1rem;
-    }
-    #support_targets_headline {
-      font-size: 1rem;
-    }
-    /* 鬘斐�繧､繝ｩ繧ｹ繝� */
-    #support_targets_face_image {
-      /* display: none; */
-      width: 4rem;
-      height: auto;
-    }
-  
-    /* specific_support_section */
-    /* support_targets_section */
-    /* conttact_us_section */
-    #contact_us_by_form_button>a {
-      font-size: 1.1rem;
-    }
-    #contact_us_by_phone_flex_box {
-      display: block;
-      width: fit-content;
-      margin: 0.4rem auto;
-    }
-  
-    /* usage_flow_section */
-  
-    /* footer */
-    #footer_organization {
-      display:block;
-    }
-    #footer_org_title {
-      text-align: left;
-    }
-    #footer_org_name {
-      text-indent: 0.8rem;
-    }
-    #address_data_list {
-      display: block;
-    }
+  html {
+    font-size: 12px;
   }
-  
-  @media screen and (max-width:380px){
-    html, body {
-      font-size: 0.85rem;
-    }
-    body {
-      width: 100%;
-    }
-    head,main.footer {
-      width:100%;
-      min-width: fit-content;
-    }
-    #header_upper_headline {
-      font-size: 1.9rem;
-    }
-    #header_lower_list {
-      padding: 0.4rem 0.2rem;
-      width: 100%;
-    }
-    #header_upper_phrase {
-      width: 16rem;
-    }
-    main {
-      padding: 0.8rem 0.4rem;
-    }
-    .main_section {
-      width: 270px;
-      margin:0.8rem auto;
-    }
-    #support_targets_face_image {
-      display: none;
-    }
-    #contact_us_by_form_button>a {
-      padding-left: 0.2rem;
-      padding-right: 0.2rem;
-      font-size: 1rem;
-    }
-    #contact_us_img_phone {
-      width: 1.2rem;
-    }
-    .arrow::after {
-      margin-bottom:0rem;
-    }
+
+  /* background-img center point is changed */
+  header {
+    background-position: 40% 50%;
   }
+
+  /* header 部分の文字縮小 */
+  .header-head-part__pre-head{
+    font-size: 0.9rem;
+  }
+  .header-head-part__head {
+    font-size:2.0rem;
+  }
+  .header-head-part__description {
+    font-size: 0.9rem;
+    width: 19rem;
+  }
+
+  /* 具体的な活動の縮小 */
+  .specific-support__head {
+    font-size: 1.4rem;
+  }
+  .specific-support__list {
+    font-size: 0.9rem;
+  }
+
+  /* こんな方はご相談ください、縮小 */
+  /* ボーダー内パディング */
+  .support-targets__flex-wrap {
+    padding: 0.4rem 0.9rem;
+  }
+  .support-targets__head {
+    font-size: 1.1rem;
+  }
+  .support-targets__list {
+    font-size: 0.9rem;
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+  .support-targets__face-img {
+    width: 4rem;
+    height: auto;
+  }
+  .support-targets__description {
+    font-size: 0.9rem;
+  }
+
+  /* ボタン縮小 */
+  .contact-us__button:link,
+  .contact-us__button:visited {
+    font-size: 1rem;
+    padding: 0.8rem 0.8rem;
+  }
+  /* 電話タイトル縮小 */
+  .contact-by-phone__img {
+    width: 1.2rem;
+  }
+  .contact-by-phone__title {
+    font-size: 1.2rem;
+  }
+
+  /* footer 縮小 */
+  .implement-organization {
+    font-size: 0.9rem;
+  }
+  .address {
+    font-size: 0.8rem;
+  }
+
+
+  
+
+  
+
+  
+
+}
