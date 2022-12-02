@@ -1,7 +1,29 @@
 @media screen and (max-width:360px) {
+  .header-head-part__description {
+    width: 80%;
+  }
+  .specific-support__inner-box{
+    padding: 0.4rem 0.8rem;
+  }
   .navigation-list {
     margin:0.6rem 0 0 0;
     font-size: 0.9rem;
+  }
+  .navigation-list__item {
+    width: 6rem;
+  }
+
+  .specific-support__head {
+    font-size: 1.2rem;
+  }
+  .specific-support__list {
+    padding-left: 0;
+    font-size: 0.9rem;
+  }
+
+  /* この様な方はご相談ください */
+  .support-targets__face-img-wrap {
+    margin:0;
   }
   .support-targets__face-img {
     display: none;
@@ -9,6 +31,14 @@
     height: auto;
   }
   .support-targets__bordered_box {
-    padding: 0.4rem 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .support-targets__head {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .support-targets__list {
+    font-size: 1rem;
+    padding-left: 1rem;
   }
 }

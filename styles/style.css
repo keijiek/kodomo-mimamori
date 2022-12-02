@@ -6,7 +6,6 @@ html {
   font-size: 17px;
 }
 
-
 /*
   全体のレイアウト編 ================================================
 */
@@ -32,7 +31,7 @@ body, .header, .main, .footer {
   width: 100%;
   max-width: calc(var(--content-width) + var(--content-padding) * 2);
   margin: 0 auto;
-  padding: 1.6rem;
+  padding: var(--content-padding);
 }
 
 
@@ -42,8 +41,8 @@ body, .header, .main, .footer {
 .header {
   background-image: url(../images/head.jpg);
   background-position: 50% 50% ;
-  /* background-repeat: repeat; */
 }
+
 /* タイトル部分はセンタリング＆シャドウ */
 .header-head-part {
   text-align: center;
@@ -70,8 +69,11 @@ body, .header, .main, .footer {
   navigator 編 ========================
 */
 /* nav のリストの上下マージンを調整 */
+.nav {
+  margin-top: 0.6rem;
+}
 .navigation-list {
-  margin:0.6rem 0 0 0;
+  margin: 0;
   font-size: 1rem;
 }
 .navigation-list__item {
@@ -90,29 +92,55 @@ body, .header, .main, .footer {
 /* nav アイテムの flex 設定 */
 .navigation-list__item {
   align-self: stretch;
+  justify-self: flex-start;
 }
+/* nav border */
 .navigation-list__item {
   padding: 0.4rem 1rem;
-  border-right-style: solid;
-  border-right-width: 1px;
+  box-shadow: 0.2rem 0.2rem 0 #333;
+  /* border-right-style: solid;
+  border-right-width: 1px; */
+  border-width: 1px;
+  border-style: solid;
+  
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
 }
 .navigation-list__item:first-child {
-  border-left-style: solid;
-  border-left-width: 1px;
+  /* border-left-style: solid;
+  border-left-width: 1px; */
 }
 .navigation-list__item {
   font-weight: 700%;
+  padding: 0;
 }
+/* nav を押したときの演出 */
+.navigation-list__item:active {
+  position: relative;
+  right: -0.1rem;
+  bottom: -0.1rem;
+  box-shadow: 0.1rem 0.1rem 0 #333;
+}
+
 .navigation-list__anchor {
-  height:100%;
+  display: block;
+  padding-top:0.25rem;
+  height: 2rem;
+  /* width: 100%; */
 }
+
+
+
 /* 
   Main 編
 */
 /* main の共通設定 */
 .main-section {
-  margin-top:1.4rem;
-  margin-bottom:1.4rem;
+  margin-top:1.6rem;
+  margin-bottom:1.6rem;
 }
 .main-section:first-child {
   margin-top:0;
@@ -133,11 +161,12 @@ body, .header, .main, .footer {
   align-content: left;
 }
 .main-flex__left-container {
-  width: 70%;
+  width: 69%;
+  margin-right: 2%;
   align-self: left;
 }
 .main-flex__right-container {
-  width: 30%;
+  width: 29%;
   align-self: left;
 }
 
@@ -152,12 +181,9 @@ body, .header, .main, .footer {
   /* width: 50%; */
   /* margin:0 auto; */
   border-style: solid;
-  border-width: 1px;
-  border-radius: 0.6rem ;
-  -webkit-border-radius: 0.6rem ;
-  -moz-border-radius: 0.6rem ;
-  -ms-border-radius: 0.6rem ;
-  -o-border-radius: 0.6rem ;
+  border-top-left-radius: 1.4rem;
+  border-bottom-right-radius: 1.4rem;
+  /* border-width: 2px; */
 }
 /* h2 左寄せ, 上下幅調整 */
 .specific-support__head {
@@ -170,6 +196,7 @@ body, .header, .main, .footer {
   text-align: left;
   padding-left: 1rem;
   margin-top: 0.4rem;
+  font-size: 1.1rem;
 }
 
 /*
@@ -204,6 +231,7 @@ body, .header, .main, .footer {
 .support-targets__list {
   margin: 0;
   margin-top: 0.6rem;
+  font-size: 1.1rem;
 }
 /* 顔イラスト */
 .support-targets__face-img-wrap {
@@ -316,6 +344,9 @@ body, .header, .main, .footer {
 /*
   Footer Styles
 */
+.footer {
+  margin-top: 1rem;
+}
 /* やや大きいpaddingを小さく */
 .footer-container {
   padding: 0.6rem 0;
@@ -336,6 +367,9 @@ body, .header, .main, .footer {
 .address-table__head::after {
   content:':'
 }
+.address-table__head {
+  text-align: right;
+}
 .address-table__data {
   padding-left: 1rem;
 }
@@ -346,4 +380,101 @@ body, .header, .main, .footer {
   width: fit-content;
   /* max-width: 70%; */
   margin: 0 auto;
+}
+
+
+/* 
+  Activity Report
+*/
+.report-article {
+  width:100%;
+}
+.report-article__head {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.report-article__section {
+  margin-bottom: 2rem;
+}
+.report-article__section:last-child {
+  margin-bottom: 0;
+}
+
+/* 報告見出し */
+.report-article__head {
+  /* font-size: 2rem; */
+  text-align: center;
+}
+/* 報告文 */
+.report-article__description {
+  max-width: calc( var(--content-width) - var(--content-padding) * 3);
+  margin: 0 auto;
+  margin-bottom: 0.6rem;
+  text-indent: 1rem;
+}
+
+/*
+  報告article の傘下 section
+  写真の grid box を内包する
+*/
+/* 見出し3 */
+.report-article__section__head {
+  text-align: center;
+}
+/* 写真Grid 共通 */
+.photos-grid-box {
+  display: grid;
+  max-width: 100%;
+  margin: 0 auto;
+}
+/* 写真Grid 2×2 */
+.photos-grid-box-2-sqr {
+  grid-template-columns:1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem 1rem;
+}
+/* 写真Grid 2×1 */
+.photos-grid-box-2-1-rect {
+  grid-template-columns:1fr 1fr;
+  grid-template-rows: 2fr;
+  column-gap: 1rem;
+}
+/* 子要素ラップ */
+.photos-grid-box__photo-wrap {
+  /*width: 40vw;
+  max-width: calc( var(--content-width)/2);
+  */
+}
+/* 子要素写真 */
+.photos-grid-box__photo {
+  width: 40vw;
+  max-width: calc( var(--content-width)/2);
+  margin: 0 auto;
+  object-fit: fill;
+  width: 100%;
+  height: auto;
+  box-shadow: 0.2rem 0.2rem 0 #333;
+  border-radius: 2%;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  -ms-border-radius: 2%;
+  -o-border-radius: 2%;
+  animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  -webkit-animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+
+.zoom-in-animation {
+  animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  -webkit-animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+/* 飛び出すアニメの keyframes zoomIn */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

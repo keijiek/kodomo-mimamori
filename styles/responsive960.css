@@ -13,6 +13,11 @@
     margin: 0 auto;
   }
 
+  /* 回り込み解除後のmargin-bottom追加 */
+  .main-flex__left-container {
+    margin-bottom: 1.6em;
+  }
+
   /* background img の中心点を変更 */
   .header {
     background-position: 30% 50%;

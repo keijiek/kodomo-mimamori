@@ -12,6 +12,9 @@
     width: 90%;
     margin: 0 auto;
   }
+  .main-flex__left-container {
+    margin-bottom: 1.6rem;
+  }
 
   /* h1 の縮小 */
   .header-head-part__head {
@@ -62,5 +65,14 @@
   }
   .contact-by-phone__title {
     font-size: 1.4rem;
+  }
+
+
+  /* 活動報告写真グリッド */
+  /* 写真縮小 */
+  .photos-grid-box__photo-wrap {
+  }
+  .photos-grid-box__photo {
+    /* width: 40vw; */
   }
 }

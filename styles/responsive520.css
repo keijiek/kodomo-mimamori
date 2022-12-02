@@ -1,6 +1,6 @@
 @media screen and (max-width:520px) {
   html {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   /* background-img center point is changed */
@@ -17,7 +17,8 @@
   }
   .header-head-part__description {
     font-size: 0.9rem;
-    width: 19rem;
+    /* width: 19rem; */
+    width: 60%;
   }
 
   /* 具体的な活動の縮小 */
@@ -72,10 +73,30 @@
   }
 
 
-  
-
-  
-
+  /*
+    活動報告、写真グリッドの修正
+  */
+  /* 写真Grid 2×2 を 1×4 へ */
+  .photos-grid-box-2-sqr {
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr;
+    gap: 0;
+    row-gap: 1rem;
+  }
+  /* 2×1 を 1×2 へ */
+  .photos-grid-box-2-1-rect {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    column-gap: 0;
+    row-gap: 1rem;
+  }
+  /* 写真を小さく */
+  .photos-grid-box__photo-wrap {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  .photos-grid-box__photo {   
+  }
   
 
 }

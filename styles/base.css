@@ -1,16 +1,8 @@
 @charset "UTF-8";
 
 /* 
-  box-sizing: border-box
-*/
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-} */
-
-/* 
-  font-family 2022's best(ICS MEDIA)
+  font-family,
+  the best setting at 2022. (by ICS MEDIA)
 */
 body {
   font-family: "Helvetica Neue",
@@ -21,6 +13,10 @@ body {
     sans-serif;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
 
 
 /*
